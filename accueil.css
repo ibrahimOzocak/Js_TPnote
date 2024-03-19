@@ -1,0 +1,18 @@
+.ens_perso > div{
+    display: flex;
+    justify-items: center;
+    margin-bottom: 1%;
+    border: 1px solid #000000;
+}
+
+.ens_perso > div > *{
+    margin: 1%;
+}
+
+.ens_perso > div .anime{
+    float: right;
+}
+
+
+
+
