@@ -13,6 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Creer div + class
                 const divNom = document.createElement('div');
                 divNom.classList.add('nom');
+                const pNom = document.createElement('p');
 
                 // Creer div + class
                 const divDescription = document.createElement('div');
@@ -21,19 +22,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 // Creer div + class
                 const divAnime = document.createElement('div');
                 divAnime.classList.add('anime');
+                const pAnime = document.createElement('p');
 
                 // Ajout dans les divs
-                divNom.textContent = item.nom;
+                pNom.textContent = item.nom;
+                divNom.appendChild(pNom);
                 divDescription.textContent = item.description;
-                divAnime.textContent = item.anime;
+                pAnime.textContent = item.anime;
+                divAnime.appendChild(pAnime);
 
                 // Ajout des divs dans le container
                 listItem.appendChild(divNom);
                 listItem.appendChild(divDescription);
                 listItem.appendChild(divAnime);
                 dataContainer.appendChild(listItem);
+
+                listItem.addEventListener('click', function() {
+                    dataContainer.innerHTML = '';
+                    console.log(item);
+                });
             });
         })
         .catch(error => console.error('Erreur lors du chargement des données JSON:', error));
 });
-

@@ -1,13 +1,15 @@
-.ens_perso > div{
+.ens_perso > div {
     display: flex;
-    justify-items: center;
     margin-bottom: 1%;
-    border: 1px solid #000000;
+    border-bottom: 1px solid #000000;
 }
 
-.ens_perso > div > *{
+.ens_perso > div > * {
     margin: 1%;
 }
 
+.nom, .anime{
+    width: 25%;
+}
 
 
