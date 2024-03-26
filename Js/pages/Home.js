@@ -14,7 +14,7 @@ export default class Home {
                         </div>
                         <div class="personnage-description">
                             ${personnage.description}
-                            <p class="lien"><a href="/#/personnage/${personnage.id}">Voir plus</a></p>
+                            <p class="lien"><a href="/#/Details/${personnage.id}">Voir plus</a></p>
                         </div>
                         <div class="personnage-anime">
                             <p>${personnage.anime}</p>

@@ -1,11 +1,13 @@
 import Home from "./pages/Home.js";
+import Details from "./pages/Details.js";
 import Error404 from "./pages/Error404.js";
 
 import Utils from "./Services/Utils.js";
 
 // List of supported routes. Any url other than these routes will throw a 404 error
 const routes = {
-    '/': Home
+    '/': Home,
+    '/details/:id': Details
 };
 
 // The router code. Takes a URL, checks against the list of supported routes and then renders the corresponding content page.
@@ -16,9 +18,16 @@ const router = async () => {
     let request = Utils.parseRequestURL()
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
     let page = routes[parsedURL] ? routes[parsedURL] : Error404;
+    console.log('request', request)
+    console.log('parsedURL', parsedURL)
+    console.log('page', page)
     if (page === Home) {
         let pageInstance = new Home();
         content.innerHTML = await pageInstance.render();
+    }
+    else if (page === Details) {
+        let pageInstance = new Details();
+        content.innerHTML = await pageInstance.render(request.id);
     }
     else {
         content.innerHTML = await page.render();
