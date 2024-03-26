@@ -18,9 +18,6 @@ const router = async () => {
     let request = Utils.parseRequestURL()
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
     let page = routes[parsedURL] ? routes[parsedURL] : Error404;
-    console.log('request', request)
-    console.log('parsedURL', parsedURL)
-    console.log('page', page)
     if (page === Home) {
         let pageInstance = new Home();
         content.innerHTML = await pageInstance.render();
