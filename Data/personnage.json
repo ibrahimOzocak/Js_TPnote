@@ -1,0 +1,89 @@
+{
+    "personnages": [
+        {
+            "nom": "Naruto Uzumaki",
+            "description":"Naruto Uzumaki est un ninja du village caché de Konoha. Il devint le jinchûriki de Kyûbi le jour de sa naissance — ce qui lui valut d'être rejeté par la plupart des habitants de Konoha durant toute son enfance",
+            "anime": "Naruto",
+            "stats": {
+                "force": 8,
+                "agilité": 9,
+                "intelligence": 7,
+                "mana": 100,
+                "compétence1": "Rasengan",
+                "compétence2": "Shadow Clone Jutsu"
+            },
+            "equipement": {
+                "arme": "Kunai",
+                "description": "Arme de jet"
+            },
+            "rôle": "Guerrier",
+            "type": "Feu",
+            "transformation": "Sage Mode",
+            "image": "../Images/uzumaki_naruto_615.png"
+            
+        },
+        {
+            "nom": "Monkey D. Luffy",
+            "description":"Monkey D. Luffy est le principal protagoniste de la série One Piece. Luffy est le fils du chef des révolutionnaires, Monkey D. Dragon, le petit-fils de Monkey D. Garp. Il est le fondateur et le capitaine de l'équipage du Chapeau de Paille.",
+            "anime": "One Piece",
+            "stats": {
+                "force": 10,
+                "agilité": 9,
+                "intelligence": 6,
+                "mana": 100,
+                "compétence1": "Gum-Gum Pistol",
+                "compétence2": "Gum-Gum Gatling"
+            },
+            "equipement": {
+                "arme": "Gomu Gomu no Mi",
+                "description": "Fruit du démon"
+            },
+            "rôle": "Guerrier",
+            "type": "Terre",
+            "transformation": "Gear Second",
+            "image": "monkey_d_luffy_22.png"
+        },
+        {
+            "nom": "Ichigo Kurosaki",
+            "description":"Ichigo Kurosaki est un Humain qui a la faculté exceptionnelle de distinguer les fantômes. Sa vie bascule lorsqu'il rencontre Rukia Kuchiki, qui lui transfère ses pouvoirs de Shinigami.",
+            "anime": "Bleach",
+            "stats": {
+                "force": 9,
+                "agilité": 8,
+                "intelligence": 7,
+                "mana": 100,
+                "compétence1": "Getsuga Tenshō",
+                "compétence2": "Black Getsuga Tenshō"
+            },
+            "equipement": {
+                "arme": "Zangetsu",
+                "description": "Katana"
+            },
+            "rôle": "Assassin",
+            "type": "Eau",
+            "transformation": "Bankai: Tensa Zangetsu",
+            "image": "kurosaki_ichigo_357.png"
+        },
+        {
+            "nom": "Son Goku",
+            "description":"Goku est un Saiyan originaire de la planète Vegeta. Il est le fils de Bardock et Gine, et le mari de Chichi. Il est également le père de Gohan et Goten.",
+            "anime": "Dragon Ball Z",
+            "stats": {
+                "force": 10,
+                "agilité": 10,
+                "intelligence": 5,
+                "mana": 100,
+                "compétence1": "Kamehameha",
+                "compétence2": "Spirit Bomb"
+            },
+            "equipement": {
+                "arme": "Nyoibō",
+                "description": "Bâton magique"
+            },
+            "rôle": "Guerrier",
+            "type": "Feu",
+            "transformation": "Super Saiyan",
+            "image": "son_goku_1773.png"
+        }
+    ]
+}

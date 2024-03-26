@@ -1,0 +1,56 @@
+#liste-perso{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    margin: 0 1%;
+}
+
+.personnage{
+    display: flex;
+    margin-bottom: 2%;
+    background-color: #323232 ;
+    padding: 1%;
+    width: 100%;
+}
+
+.personnage-nom{
+    width: 15%;
+    justify-content: center;
+}
+
+.personnage-description{
+    width: 70%;
+    padding-left: 0.5%;
+    border-right: 1px solid white;
+    border-left: 1px solid white;
+}
+
+h1{
+    text-align: center;
+    color: white;
+}
+
+.lien{
+    margin: 0.5% 0;
+}
+
+.lien a{
+    color: white;
+    text-decoration: underline;
+    font-weight: bold;
+}
+
+.lien a:hover{
+    color: #7f31f3;
+}
+
+.personnage-anime{
+    width: 15%;
+    justify-content: center;
+}
+
+.personnage-nom p, .personnage-anime p {
+    text-align: center;
+}
