@@ -2,7 +2,7 @@ import PersonnageProvider from "../Services/PersonnageProvider.js";
 
 export default class Home {
     async render() {
-        let personnages = await PersonnageProvider.fetchPersonnages(3);
+        let personnages = await PersonnageProvider.fetchPersonnages();
         return `
             <h1>Les Personnages</h1>
             <link rel="stylesheet" href="../../Css/home.css">

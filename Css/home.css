@@ -2,15 +2,17 @@
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
+    align-items: center;
     color: white;
     margin: 0 1%;
 }
 
 .personnage{
     display: flex;
-    margin: 0 1% 2% 1%;
+    margin-bottom: 2%;
     background-color: #323232 ;
     padding: 1%;
+    width: 100%;
 }
 
 .personnage-nom{
