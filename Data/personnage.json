@@ -4,7 +4,7 @@
             "id": 0,
             "nom": "Naruto Uzumaki",
             "genre": "Homme",
-            "description":"Naruto Uzumaki est un ninja du village caché de Konoha. Il devint le jinchûriki de Kyûbi le jour de sa naissance — ce qui lui valut d'être rejeté par la plupart des habitants de Konoha durant toute son enfance",
+            "description":"Naruto Uzumaki (うずまきナルト, Uzumaki Naruto) est un ninja du village caché de Konoha. Il devint le jinchûriki de Kyûbi le jour de sa naissance — ce qui lui valut d'être rejeté par la plupart des habitants de Konoha durant toute son enfance. Après avoir rejoint l'Équipe 7, Naruto travailla dur pour obtenir la reconnaissance des villageois tout en poursuivant son rêve de devenir Hokage.",
             "anime": "Naruto",
             "stats": {
                 "force": 8,
@@ -26,7 +26,7 @@
             "id": 1,
             "nom": "Monkey D. Luffy",
             "genre": "Homme",
-            "description":"Monkey D. Luffy est le principal protagoniste de la série One Piece. Luffy est le fils du chef des révolutionnaires, Monkey D. Dragon, le petit-fils de Monkey D. Garp. Il est le fondateur et le capitaine de l'équipage du Chapeau de Paille.",
+            "description":"Monkey D. Luffy est un pirate et le principal protagoniste du manga et anime One Piece. Luffy est le fils du chef de l'Armée Révolutionnaire, Monkey D. Dragon, le petit-fils du célèbre héros de la Marine, Monkey D. Garp, le fils adoptif d'une bandit des montagnes, Curly Dadan ainsi que le frère adoptif du défunt Portgas D. Ace et de Sabo.",
             "anime": "One Piece",
             "stats": {
                 "force": 10,
@@ -47,7 +47,7 @@
             "id": 2,
             "nom": "Ichigo Kurosaki",
             "genre": "Homme",
-            "description":"Ichigo Kurosaki est un Humain qui a la faculté exceptionnelle de distinguer les fantômes. Sa vie bascule lorsqu'il rencontre Rukia Kuchiki, qui lui transfère ses pouvoirs de Shinigami.",
+            "description":"Ichigo Kurosaki (黒崎 一護, Kurosaki Ichigo) est un Humain qui a la faculté exceptionnelle de distinguer les fantômes. Sa vie bascule lorsqu'il rencontre Rukia Kuchiki, qui lui transfère ses pouvoirs de Shinigami afin de sauver sa famille de l'attaque d'un Hollow. Ichigo est le protagoniste principal du manga Bleach.",
             "anime": "Bleach",
             "stats": {
                 "force": 9,
@@ -68,7 +68,7 @@
             "id": 3,
             "nom": "Son Goku",
             "genre": "Homme",
-            "description":"Goku est un Saiyan originaire de la planète Vegeta. Il est le fils de Bardock et Gine, et le mari de Chichi. Il est également le père de Gohan et Goten.",
+            "description":"Son Goku (孫悟空, Son Gokū?, anciennement orthographié Sangoku et Son Gokû), de son nom de naissance Carot (appelé de cette façon dans une version du manga) , Kakarot (カカロット, Kakarotto?), est un personnage de fiction japonais créé par Akira Toriyama et le principal héros du manga Dragon Ball. Il apparaît pour la première fois le 20 novembre 1984 dans le Weekly Shōnen Jump. Le personnage s'inspire de Sun Wukong, en raison de son histoire d'origine très similaire.",
             "anime": "Dragon Ball Z",
             "stats": {
                 "force": 10,
@@ -84,6 +84,153 @@
             },
             "transformation": "Super Saiyan",
             "image": "../Images/son_goku_1773.png"
+        },
+        {
+            "id": 4,
+            "nom": "Saitama",
+            "genre": "Homme",
+            "description":"Saitama (サイタマ, Saitama) est le protagoniste principal de One Punch-Man et le personnage le plus puissant de l'histoire. C'est un super-héros qui a intégré l'Association des Héros et qui est actuellement en classe A sous le surnom de Chauve Capé (ハゲマント, Hagemanto). Genos est son disciple et colocataire.",
+            "anime": "One Punch",
+            "stats": {
+                "force": 20,
+                "defense": 20,
+                "agilite": 20,
+                "intelligence": 3
+            },
+            "compétence1": "Serious Punch",
+            "compétence2": "Consecutive Normal Punches",
+            "equipement": {
+                "arme": "Gants de combat",
+                "description": "Gants de combat"
+            },
+            "transformation": "Serious Series",
+            "image": "../Images/saitama_12295.png"
+        },
+        {
+            "id": 5,
+            "nom": "Natsu Dragnir",
+            "genre": "Homme",
+            "description":"Natsu Dragnir(ナツ・ドラグニル, Natsu Doraguniru), surnommé La Salamandre (サラマンダー Saramandā) en raison du fait qu'il utilise la Magie du Chasseur de Dragon de Feu qui lui fut enseigné par son père adoptif le Dragon de feu Ignir, et l'un des Chasseurs de Dragons de la Guilde Fairy Tail de première génération tout comme Wendy et Gajil, il fait parti de l'Équipe de Natsu ainsi que l'un des principaux protagonistes de la série éponyme.",
+            "anime": "Fairy Tail",
+            "stats": {
+                "force": 9,
+                "defense": 8,
+                "agilite": 10,
+                "intelligence": 6
+            },
+            "compétence1": "Fire Dragon's Roar",
+            "compétence2": "Fire Dragon's Iron Fist",
+            "equipement": {
+                "arme": "Étherion",
+                "description": "Magie de feu"
+            },
+            "transformation": "Dragon",
+            "image": "../Images/natsu_dragnil_salamander_6045.png"
+        },
+        {
+            "id": 6,
+            "nom": "Edward Elric",
+            "genre": "Homme",
+            "description":"Edward Elric (エドワード・エルリック, Edowādo Erurikku, Edward Elric), aussi connu sous le nom de Ed ou l'Alchimiste Fullmetal est le protagoniste principal de Fullmetal Alchemist. Il est le fils de Van Hohenheim et de Trisha Elric ainsi que le frère aîné d'Alphonse Elric. Avec son frère, ils ont été victimes d'une expérience d'une Transmutation humaine ratée, ce qu'il lui a valu de perdre son bras droit, et sa jambe gauche.",
+            "anime": "Fullmetal Alchemist",
+            "stats": {
+                "force": 8,
+                "defense": 10,
+                "agilite": 8,
+                "intelligence": 9
+            },
+            "compétence1": "Alchimie",
+            "compétence2": "Alchimie de la transmutation",
+            "equipement": {
+                "arme": "Automail",
+                "description": "Prothèse mécanique"
+            },
+            "transformation": "Alchimie",
+            "image": "../Images/edward_elric_106.png"
+        },
+        {
+            "id": 7,
+            "nom": "Gon Freecss",
+            "genre": "Homme",
+            "description":"Gon Freecss (ゴン=フリークス, Gon Furīkusu) est le protagoniste principal de la série Hunter × Hunter. Il est le fils du célèbre Hunter appelé Jin Freecss, et neveu adoptif de Mito. Gon a décidé de devenir un Hunter dans le but de retrouver son père, mais ne s'intéresse aucunement à sa mère.",
+            "anime": "Hunter x Hunter",
+            "stats": {
+                "force": 8,
+                "defense": 7,
+                "agilite": 9,
+                "intelligence": 6
+            },
+            "compétence1": "Jajanken",
+            "compétence2": "Rock",
+            "equipement": {
+                "arme": "Pêche",
+                "description": "Canne à pêche"
+            },
+            "transformation": "Nen",
+            "image": "../Images/gon_freecss_12702.png"
+        },
+        {
+            "id": 8,
+            "nom": "Eren Jäger",
+            "genre": "Homme",
+            "description":"Eren Jäger (japonais : エレン・イェーガー, Hepburn : Eren Yēgā?) est un membre du Bataillon d'exploration et le protagoniste, puis l'antagoniste principal de la série. Il a vécu dans le District de Shiganshina avec ses parents et Mikasa Ackerman jusqu'à la chute du Mur Maria. Au cours de l'incident, Eren assiste, impuissant, à la mort de sa mère par la main d'un Titan. Cet événement suscite chez Eren une haine intense envers les Titans, ce dernier voulant les éradiquer jusqu'au dernier.",
+            "anime": "Attack on Titan",
+            "stats": {
+                "force": 9,
+                "defense": 8,
+                "agilite": 9,
+                "intelligence": 7
+            },
+            "compétence1": "Titan",
+            "compétence2": "Titan Éveillé",
+            "equipement": {
+                "arme": "Épée",
+                "description": "Arme de combat"
+            },
+            "transformation": "Titan",
+            "image": "../Images/eren_jaeger_9414.png"
+        },
+        {
+            "id": 9,
+            "nom": "Meliodas",
+            "genre": "Homme",
+            "description":"Meliodas「メリオダス」 est le Dragon de la Colère qui dirige les Seven deadly sins. Il est le principal protagoniste de la série, et était le propriétaire du célèbre Boar Hat, une taverne. Son Trésor Sacré est la Trancheuse de Démons Lostvayne et sa principale capacité est le Contre Total. Il est également l'ancien Chef des Dix Commandements, en tant que Meliodas de la Charité「慈愛のメリオダス Jiai no Meriodasu」, un ancien membre de l'Alliance Stigma, et le fils aîné du Roi des Démons.",
+            "anime": "The Seven Deadly Sins",
+            "stats": {
+                "force": 9,
+                "defense": 8,
+                "agilite": 9,
+                "intelligence": 7
+            },
+            "compétence1": "Full Counter",
+            "compétence2": "Revenge Counter",
+            "equipement": {
+                "arme": "Lostvayne",
+                "description": "Épée sacrée"
+            },
+            "transformation": "Assault Mode",
+            "image": "../Images/meliodas_10864.png"
+        },
+        {
+            "id": 10,
+            "nom": "Lelouch Lamperouge",
+            "genre": "Homme",
+            "description":"Lelouch Lamperouge, aussi appelé 'Lulu' par ses amis, est en fait le fils de l'empereur de Britannia et de la dernière impératrice Marianne, il est donc un membre de la famille impériale. Son véritable nom est Lelouch Vi Britannia. Il était le 11ème prince et le 17ème en liste pour le trône, avant que sa mère soit assassinée et sa sœur estropiée dans une attaque terroriste. Le garçon de dix ans s'oppose alors à son père, l'Empereur, et l'accuse d'avoir laissé sa mère sans défense.",
+            "anime": "Code Geass",
+            "stats": {
+                "force": 7,
+                "defense": 7,
+                "agilite": 8,
+                "intelligence": 10
+            },
+            "compétence1": "Geass",
+            "compétence2": "Geass de l'Ordre",
+            "equipement": {
+                "arme": "Geass",
+                "description": "Pouvoir surnaturel"
+            },
+            "transformation": "Geass",
+            "image": "../Images/lelouch_lamperouge_2041.png"
         }
     ]
 }
