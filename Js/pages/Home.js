@@ -10,6 +10,7 @@ export default class Home {
                 ${personnages.map(personnage => `
                     <div class="personnage">
                         <div class="personnage-nom">
+                            <img src="${personnage.image}" alt="${personnage.nom}" loading="lazy">
                             <p>${personnage.nom}</p>
                         </div>
                         <div class="personnage-description">

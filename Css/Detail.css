@@ -1,0 +1,89 @@
+p{
+    color: white;
+}
+
+h1{
+    color: white;
+    text-align: center;
+}
+
+.container-perso{
+    margin: 1%;
+    width: auto;
+}
+
+.personnage{
+    background-color: #323232;
+    display:flex;
+    justify-content: space-around;
+}
+
+.personnage p{
+    opacity: 0.8;
+}
+
+.img-perso{
+    width: 25%;
+    margin: 1%;
+}
+
+.img-perso img{
+    aspect-ratio: 1/1;
+    width: 100%;
+}
+
+.equipement{
+    background-color: #484848;
+    padding: 0.25% 0;
+}
+
+.equipement-title{
+    text-align: center;
+}
+
+.equipement p{
+    margin: 3%;
+}
+
+.info-perso{
+    margin: 1%;
+}
+
+.stats-perso{
+    background-color: #484848;
+    justify-items: center;
+    margin: 1%;
+    width: 20%;
+    height: 10%;
+}
+
+.stats-title{
+    color: white;
+    text-align: center;
+    font-size: 120%;
+}
+
+.force-def, .agi-int{
+    display: flex;
+    justify-content: space-around;
+    margin: 10% 0;
+    width: 100%;
+}
+
+.force-def p, .agi-int p{
+    padding: auto;
+    margin: 1%;
+}
+
+.perso-description{
+    background-color: #484848;
+    margin-top: 1%;
+    padding: 0.5%;
+    width: 20%;
+    height: 10%;
+}
+
+.perso-description p{
+    color: white;
+    margin: 0.25% 0;
+}
