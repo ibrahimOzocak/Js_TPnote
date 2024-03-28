@@ -10,11 +10,12 @@ export default class Home {
                 ${personnages.map(personnage => `
                     <div class="personnage">
                         <div class="personnage-nom">
+                            <img src="${personnage.image}" alt="${personnage.nom}" loading="lazy">
                             <p>${personnage.nom}</p>
                         </div>
                         <div class="personnage-description">
                             ${personnage.description}
-                            <p class="lien"><a href="/#/personnage/${personnage.id}">Voir plus</a></p>
+                            <p class="lien"><a href="/#/Details/${personnage.id}">Voir plus</a></p>
                         </div>
                         <div class="personnage-anime">
                             <p>${personnage.anime}</p>

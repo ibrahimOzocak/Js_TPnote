@@ -18,13 +18,15 @@
 .personnage-nom{
     width: 15%;
     justify-content: center;
+    text-align: center;
 }
 
 .personnage-description{
     width: 70%;
-    padding-left: 0.5%;
+    padding: 0 0.5%;
     border-right: 1px solid white;
     border-left: 1px solid white;
+
 }
 
 h1{
@@ -48,6 +50,9 @@ h1{
 
 .personnage-anime{
     width: 15%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
     justify-content: center;
 }
 
