@@ -59,3 +59,13 @@ h1{
 .personnage-nom p, .personnage-anime p {
     text-align: center;
 }
+
+.pagination{
+    display: flex;
+    justify-content: space-around;
+    margin: 2% 0;
+}
+
+#search{
+    margin: 2% 0;
+}

@@ -10,6 +10,8 @@ const routes = {
     '/details/:id': Details
 };
 
+let pageInstance = null;
+
 // The router code. Takes a URL, checks against the list of supported routes and then renders the corresponding content page.
 const router = async () => {
     // Lazy load view element:
@@ -19,8 +21,9 @@ const router = async () => {
     let parsedURL = (request.resource ? '/' + request.resource : '/') + (request.id ? '/:id' : '') + (request.verb ? '/' + request.verb : '');
     let page = routes[parsedURL] ? routes[parsedURL] : Error404;
     if (page === Home) {
-        let pageInstance = new Home();
+        pageInstance = new Home();
         content.innerHTML = await pageInstance.render();
+        await pageInstance.bindEventListeners();
     }
     else if (page === Details) {
         let pageInstance = new Details();
@@ -29,7 +32,15 @@ const router = async () => {
     else {
         content.innerHTML = await page.render();
     }
+
 }
+
+export async function chargementPages() {
+    content.innerHTML = await pageInstance.render();
+    await pageInstance.bindEventListeners();
+}
+
+export { pageInstance };
 
 // Listen on hash change:
 window.addEventListener('hashchange', router);
