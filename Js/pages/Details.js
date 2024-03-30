@@ -41,8 +41,8 @@ export default class Details {
                         <p>${personnage.description}</p>
                     </div>
                 </div>
-
             </div>
+            <p><a class="retour" href="#/">Retour à la liste</a></p>
 
         `;
     }
