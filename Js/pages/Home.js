@@ -1,8 +1,10 @@
 import PersonnageProvider from "../Services/PersonnageProvider.js";
 import { chargementPages } from "../app.js";
+import { chargementPagesRecherche } from "../app.js";
 
 
 export default class Home {
+    
     constructor() {
         this.firstIdPersonnage = 0;
         this.LastIdPersonnage = 4;
@@ -10,8 +12,9 @@ export default class Home {
         this.content = "";
     }
 
-    async loadData() {this.personnages = await PersonnageProvider.fetchPersonnages();}
-
+    async loadData() {
+        this.personnages = await PersonnageProvider.fetchPersonnages();
+    }
 
     async nbrPersoParPage() {
         let personnages = [];
@@ -25,14 +28,23 @@ export default class Home {
         return personnages;
     }
 
-    async render(defaultParametre = PersonnageProvider.fetchPersonnages()) {
+    async render(defaultParametre = []) {
         await this.loadData();
-        const personnages = await this.nbrPersoParPage() || defaultParametre;
-    
+
+        let personnages;
+        if ( defaultParametre.length == 0 ){
+            personnages = await this.nbrPersoParPage();
+        } else {
+            personnages = defaultParametre;
+        }
+
         const listePersoContent = await this.getPersoList(personnages);
     
         return `
-            <input type="search" id="search" placeholder="Rechercher un personnage">
+            <div class="Chercher">
+                <input type="search" id="search" placeholder="Rechercher un personnage">
+                <button id="btSearch"> Rechercher </button>
+            </div>
             <link rel="stylesheet" href="../../Css/home.css">
             ${listePersoContent.outerHTML}
             <div class="pagination">
@@ -55,6 +67,9 @@ export default class Home {
                 <div class="personnage-description">
                     ${personnage.description}
                     <p class="lien"><a href="/#/Details/${personnage.id}">Voir plus</a></p>
+                    <input type="number" id="note-${personnage.id}" min="0" max="10" placeholder="Entrez une note de 0 à 10">
+                    <button id="ValiderNote/${personnage.id}"> Valider </button>
+                    <p>Note actuelle: ${personnage.note !== undefined ? personnage.note : 'Aucune note'}</p>
                 </div>
                 <div class="personnage-anime">
                     <p>${personnage.anime}</p>
@@ -63,10 +78,51 @@ export default class Home {
         `).join('\n');
     
         this.content.innerHTML = innerHTML;
-    
+        
         return this.content;
     }    
+
+    async modifierNoteDansJson(personnageId, nouvelleNote) {
+        try {
+            const response = await fetch('http://localhost:3000/personnages');
+            const data = await response.json();
+            console.log(data);
+            // Accéder au tableau de personnages dans l'objet 'data'
+            const personnages = data;
     
+            // Rechercher le personnage par ID
+            let found = false;
+            for (let i = 0; i < personnages.length; i++) {
+                if (personnages[i].id === personnageId) {
+                    // Mettre à jour la note du personnage
+                    console.log(personnages[i].note, nouvelleNote, personnages[i])
+                    personnages[i].note = nouvelleNote;
+                    found = true;
+                    break;
+                }
+            }
+    
+            if (found) {
+                // Mettre à jour le fichier JSON sur le serveur
+                const putResponse = await fetch(`http://localhost:3000/personnages/${personnageId}`, {
+                    method: 'PUT',
+                    headers: {
+                        'Content-Type': 'application/json',
+                    },
+                    body: JSON.stringify(personnages.find(personnage => personnage.id === personnageId)),
+                });
+                const updatedPersonnage = await putResponse.json();
+    
+                console.log(`La note du personnage avec l'ID ${personnageId} a été mise à jour avec succès.`);
+                chargementPages();
+            } else {
+                console.log(`Personnage avec l'ID ${personnageId} non trouvé.`);
+            }
+        } catch (error) {
+            console.error('Une erreur s\'est produite :', error);
+        }
+    }
+
     async nextPage() {
         const listPerso = await PersonnageProvider.fetchPersonnages();
         if(this.firstIdPersonnage + this.LastIdPersonnage <= listPerso.length) {
@@ -89,17 +145,22 @@ export default class Home {
     }
 
     async searchPersonnage(e) {
-        const nomSearched = e.target.value.toLowerCase();
+        const nomSearched = e.toLowerCase();
         const recherche = this.personnages.filter(personnage => {
             return personnage.nom.toLowerCase().includes(nomSearched);
         });
         console.log("recherche", recherche);
         this.content.innerHTML = await this.render(recherche);
-        this.bindEventListeners();
+        chargementPagesRecherche(recherche);
     }
+
+
+    
+    
+    
     
 
-        async bindEventListeners() {
+    async bindEventListeners() {
         document.getElementById('previousPageButton').addEventListener('click', async () => {
             await this.previousPage();
         });
@@ -108,8 +169,29 @@ export default class Home {
             await this.nextPage();
         });
 
-        document.getElementById('search').addEventListener('input', async (e) => {
-            await this.searchPersonnage(e);
+        document.getElementById('btSearch').addEventListener('click', async () => {
+            await this.searchPersonnage(await document.getElementById('search').value);
         });
+
+        // Ajout de gestionnaires d'événements pour la notation
+        this.personnages.forEach(personnage => {
+            const noteInput = document.getElementById(`note-${personnage.id}`);
+            const validerButton = document.getElementById(`ValiderNote/${personnage.id}`);
+
+            if (noteInput && validerButton) {
+                validerButton.addEventListener('click', async () => {
+                    const note = parseInt(noteInput.value);
+                    if (!isNaN(note) && note >= 0 && note <= 10) {
+                        personnage.note = note;
+                        this.modifierNoteDansJson(personnage.id, note);
+                        this.content.innerHTML = await this.render();
+                    } else {
+                        alert("Veuillez entrer une note valide (entre 0 et 10).");
+                    }
+                });
+            }
+        });
+
     }
+    
 }

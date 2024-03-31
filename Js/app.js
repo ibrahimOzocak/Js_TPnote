@@ -40,6 +40,11 @@ export async function chargementPages() {
     await pageInstance.bindEventListeners();
 }
 
+export async function chargementPagesRecherche(listePerso) {
+    content.innerHTML = await pageInstance.render(listePerso);
+    await pageInstance.bindEventListeners();
+}
+
 export { pageInstance };
 
 // Listen on hash change:
