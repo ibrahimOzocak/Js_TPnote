@@ -1,9 +1,9 @@
 import PersonnageProvider from "../Services/PersonnageProvider.js";
 import { chargementPages } from "../app.js";
 import { chargementPagesRecherche } from "../app.js";
+import { chargementPagesFavoris } from "../app.js";
 
-
-export default class Home {
+export default class Favoris {
     
     constructor() {
         this.firstIdPersonnage = 0;
@@ -16,9 +16,24 @@ export default class Home {
         this.personnages = await PersonnageProvider.fetchPersonnages();
     }
 
-    async nbrPersoParPage() {
+    async nbrPersoParPage(listeIdPerso) {
         let personnages = [];
-        const listPerso = await PersonnageProvider.fetchPersonnages();
+        let listPerso = await PersonnageProvider.fetchPersonnages();
+        let l = listPerso.length;
+
+        for (let i = 0; i < l ; ++i) {
+            if (i === listPerso.length){
+                break;
+            }
+
+            let index = listeIdPerso.indexOf(listPerso[i].id);
+
+            if (index === -1) {
+                listPerso.splice(i, 1);
+                i --;
+            }
+        }
+
         for(let i = this.firstIdPersonnage; i < this.firstIdPersonnage + this.LastIdPersonnage; i++) {
             if(listPerso[i] === undefined) {
                 break;
@@ -32,12 +47,13 @@ export default class Home {
         await this.loadData();
 
         let personnages;
-        if ( defaultParametre.length == 0 ){
-            personnages = await this.nbrPersoParPage();
+        if ( defaultParametre.length > 0 ){
+            personnages = await this.nbrPersoParPage(defaultParametre);
         } else {
             personnages = defaultParametre;
         }
 
+        console.log(personnages, defaultParametre, defaultParametre.length); //
         const listePersoContent = await this.getPersoList(personnages);
     
         return `
@@ -152,14 +168,12 @@ export default class Home {
         });
         console.log("recherche", recherche);
         this.content.innerHTML = await this.render(recherche);
-
         chargementPagesRecherche(recherche);
     }
 
 
     
-    // localStorage.setItem('listeFavoris', JSON.stringify(recherche));
-    // console.log(JSON.parse(localStorage.getItem('listeFavoris')));
+    
     
     
 
@@ -187,15 +201,15 @@ export default class Home {
                     if (!isNaN(note) && note >= 0 && note <= 10) {
                         personnage.note = note;
                         this.modifierNoteDansJson(personnage.id, note);
-                        this.content.innerHTML = await this.render();
+                        this.content.innerHTML = await this.render(JSON.parse(localStorage.getItem('listeFavoris')));
+                        chargementPagesFavoris();
                     } else {
                         alert("Veuillez entrer une note valide (entre 0 et 10).");
                     }
                 });
             }
-
-
             const validerFavoris = document.getElementById(`Favoris/${personnage.id}`);
+
 
             if (validerFavoris) {
                 validerFavoris.addEventListener('click', async () => {
@@ -216,7 +230,7 @@ export default class Home {
                         localStorage.setItem('listeFavoris', JSON.stringify([personnage.id])); 
                     }
                 this.content.innerHTML = await this.render();
-
+                chargementPagesFavoris();
                 });
             }
         });
