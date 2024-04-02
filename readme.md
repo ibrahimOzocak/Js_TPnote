@@ -1,11 +1,4 @@
-D'abord lancer la base de donnée avec la commande suivante :
-npx json-server ./Data/personnage.json
-
-Ensuite le server :
-http-server -c-1
-
 # Projet de Gestion de Personnages
-
 Ce projet est une application de gestion de personnages utilisant une base de données JSON. Les étapes suivantes vous guideront pour démarrer le projet.
 
 ## Installation
@@ -15,20 +8,23 @@ Ce projet est une application de gestion de personnages utilisant une base de do
 3. Installer nvm afin de lancer le server .json
 4. Installer http-server pour lancer l'index
 
-## Cloner le dépôt
-## Rentrer dans le dépôt
-## Installer nvm
-## Installer http-server
+## 1. Cloner le dépôt
+1.1 Ouvrer un terminal
+1.2 Entrer la commande suivante : git clone https://github.com/ibrahimOzocak/Js_TPnote.git
+
+## 2. Rentrer dans le répertoire
+2.1 Entrer dans le répertoire : cd Js_TPnote
+
+## 3. Installer nvm
+3.1 Installer nvm avec : nvm install 18
+3.2 Choisir une version avec : nvm use 18
+
+## 4. Installer http-server
+4.1 Installer http-server : npm install --global http-server
 
 # Lancer le projet
-
-```bash
-cd gestion-personnages
-
-Ouvrir un terminal et faire la commande :
-curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.6/install.sh | bash
-Fermer le terminal
-Rouvrir un nouveau terminal et faire :
-nvm install 18
-nvm use 18
-La commande `npx json-server db.json` devrait marcher
+1. Lancer la base de données avec la commande suivante : npx json-server ./Data/personnage.json
+2. Ensuite le server : http-server -c-1
+(Utilisation de l'option "-c-1" pour désactiver le cache)
+3. Lancer maintenant l'URL
+(le premier étant pour lancer en local)
