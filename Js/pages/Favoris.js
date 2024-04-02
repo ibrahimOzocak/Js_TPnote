@@ -147,7 +147,7 @@ export default class Favoris {
             await this.nbrPersoParPage();
             this.content = "";
             await this.render();
-            chargementPages();
+            chargementPagesFavoris(JSON.parse(localStorage.getItem('listeFavoris')));
         }
     }
 
@@ -157,7 +157,7 @@ export default class Favoris {
             await this.nbrPersoParPage();
             this.content = "";
             await this.render();
-            chargementPages();
+            chargementPagesFavoris(JSON.parse(localStorage.getItem('listeFavoris')));
         }
     }
 
@@ -202,7 +202,7 @@ export default class Favoris {
                         personnage.note = note;
                         this.modifierNoteDansJson(personnage.id, note);
                         this.content.innerHTML = await this.render(JSON.parse(localStorage.getItem('listeFavoris')));
-                        chargementPagesFavoris();
+                        chargementPagesFavoris(JSON.parse(localStorage.getItem('listeFavoris')));
                     } else {
                         alert("Veuillez entrer une note valide (entre 0 et 10).");
                     }
@@ -217,7 +217,7 @@ export default class Favoris {
                     localStorage.clear();
                     if (fav && fav.length > 0) { 
                         let listeDesFavoris = JSON.parse(fav);
-
+                
                         let index = listeDesFavoris.indexOf(personnage.id);
                         
                         if (index === -1) {
@@ -229,9 +229,20 @@ export default class Favoris {
                     } else {
                         localStorage.setItem('listeFavoris', JSON.stringify([personnage.id])); 
                     }
-                this.content.innerHTML = await this.render();
-                chargementPagesFavoris();
+                
+                    // Mettre à jour le texte du bouton
+                                     
+                    this.content.innerHTML = await this.render();
+                    chargementPagesFavoris();
                 });
+                let ar = JSON.parse(localStorage.getItem('listeFavoris'));
+                let id = personnage.id;
+
+                if (ar && ar.includes(id)) {
+                    validerFavoris.textContent = 'Favoris : Oui';
+                } else {
+                    validerFavoris.textContent = 'Favoris : Non';
+                }
             }
         });
 
