@@ -20,7 +20,7 @@
       },
       "transformation": "Sage Mode",
       "image": "../Images/uzumaki_naruto_615.png",
-      "note": 3
+      "note": 0
     },
     {
       "id": "1",
@@ -64,7 +64,7 @@
       },
       "transformation": "Bankai: Tensa Zangetsu",
       "image": "../Images/kurosaki_ichigo_357.png",
-      "note": 3
+      "note": 2
     },
     {
       "id": "3",
@@ -130,7 +130,7 @@
       },
       "transformation": "Dragon",
       "image": "../Images/natsu_dragnil_salamander_6045.png",
-      "note": 9
+      "note": 2
     },
     {
       "id": "6",
@@ -152,7 +152,7 @@
       },
       "transformation": "Alchimie",
       "image": "../Images/edward_elric_106.png",
-      "note": 0
+      "note": 4
     },
     {
       "id": "7",
@@ -174,7 +174,7 @@
       },
       "transformation": "Nen",
       "image": "../Images/gon_freecss_12702.png",
-      "note": 5
+      "note": 2
     },
     {
       "id": "8",
