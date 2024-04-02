@@ -9,18 +9,18 @@ Ce projet est une application de gestion de personnages utilisant une base de do
 4. Installer http-server pour lancer l'index
 
 ## 1. Cloner le dépôt
-1.1 Ouvrer un terminal
-1.2 Entrer la commande suivante : git clone https://github.com/ibrahimOzocak/Js_TPnote.git
+1. Ouvrer un terminal
+2. Entrer la commande suivante : git clone https://github.com/ibrahimOzocak/Js_TPnote.git
 
 ## 2. Rentrer dans le répertoire
-2.1 Entrer dans le répertoire : cd Js_TPnote
+1. Entrer dans le répertoire : cd Js_TPnote
 
 ## 3. Installer nvm
-3.1 Installer nvm avec : nvm install 18
-3.2 Choisir une version avec : nvm use 18
+1. Installer nvm avec : nvm install 18
+2. Choisir une version avec : nvm use 18
 
 ## 4. Installer http-server
-4.1 Installer http-server : npm install --global http-server
+1. Installer http-server : npm install --global http-server
 
 # Lancer le projet
 1. Lancer la base de données avec la commande suivante : npx json-server ./Data/personnage.json
