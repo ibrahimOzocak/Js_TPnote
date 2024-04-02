@@ -203,7 +203,7 @@ export default class Home {
                     localStorage.clear();
                     if (fav && fav.length > 0) { 
                         let listeDesFavoris = JSON.parse(fav);
-
+                
                         let index = listeDesFavoris.indexOf(personnage.id);
                         
                         if (index === -1) {
@@ -215,9 +215,20 @@ export default class Home {
                     } else {
                         localStorage.setItem('listeFavoris', JSON.stringify([personnage.id])); 
                     }
-                this.content.innerHTML = await this.render();
-
+                
+                    // Mettre à jour le texte du bouton
+                    
+                    this.content.innerHTML = await this.render();
+                    chargementPages();
                 });
+                let ar = JSON.parse(localStorage.getItem('listeFavoris'));
+                let id = personnage.id;
+
+                if (ar && ar.includes(id)) {
+                    validerFavoris.textContent = 'Favoris : Oui';
+                } else {
+                    validerFavoris.textContent = 'Favoris : Non';
+                }
             }
         });
 
